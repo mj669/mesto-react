@@ -17,13 +17,13 @@ function Card(props) {
         props.onCardLike(props.card)
     }
 
-    function handleDeleteCard() {
-        props.onCardDelete(props.card)
+    function handleDeleteRequest() {
+        props.onCardDeleteRequest(props.card)
     }
 
     return (
         <div className="gallery__card">
-            <button className={cardDeleteButtonClassName} onClick={handleDeleteCard} type="button"></button>
+            <button className={cardDeleteButtonClassName} onClick={handleDeleteRequest} type="button"></button>
             <img className="gallery__image" src={props.card.link} alt={props.card.name} onClick={props.onCardClick} />
             <div className="gallery__info">
                 <h2 className="gallery__title">{props.card.name}</h2>

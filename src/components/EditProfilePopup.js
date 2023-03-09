@@ -12,7 +12,7 @@ function EditProfilePopup(props) {
     useEffect(() => {
         setName(currentUser.name);
         setDescription(currentUser.about);
-    }, [currentUser])
+    }, [currentUser, props.isOpen])
 
     function handleUserName(evt) {
         setName(evt.target.value)
@@ -50,7 +50,7 @@ function EditProfilePopup(props) {
                 maxLength="40"
                 id="name-input"
                 onChange={handleUserName}
-                value={name ? name : ''}
+                value={name || ''}
             />
             <span className="popup__text-error name-input-error"></span>
             <input
@@ -63,7 +63,7 @@ function EditProfilePopup(props) {
                 maxLength="200"
                 id="about-input"
                 onChange={handleUserDescription}
-                value={description ? description : ''}
+                value={description || ''}
             />
             <span className="popup__text-error about-input-error"></span>
         </PopupWithForm>
